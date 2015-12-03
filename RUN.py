@@ -962,41 +962,41 @@ class OrbitalCalculator():
         def resetslide():
             if self.currenttutmenu == 1:
                 if self.slideshow == 1:
-                    self.CurrentImage= PhotoImage(file="BASICMISSIONTUT.png") #move these out
+                    self.CurrentImage= PhotoImage(file="BASICMISSIONTUT.gif") #move these out
                     self.nextbutton.configure(state = NORMAL)
                     self.backbutton.configure(state = DISABLED)
                 elif self.slideshow ==2:
-                    self.CurrentImage= PhotoImage(file="VARMISSIONTUT.png") #Make this better
+                    self.CurrentImage= PhotoImage(file="VARMISSIONTUT.gif") #Make this better
                     self.nextbutton.configure(state = NORMAL)
                     self.backbutton.configure(state = NORMAL)
                 elif self.slideshow ==3:
-                    self.CurrentImage= PhotoImage(file="DISPLAYTUT.png")
+                    self.CurrentImage= PhotoImage(file="DISPLAYTUT.gif")
                     self.nextbutton.configure(state = DISABLED)
                     self.backbutton.configure(state = NORMAL)
             elif self.currenttutmenu == 2:
                 if self.slideshow == 1:
-                    self.CurrentImage= PhotoImage(file="MATHTUT.png")
+                    self.CurrentImage= PhotoImage(file="MATHTUT.gif")
                     self.nextbutton.configure(state = NORMAL)
                     self.backbutton.configure(state = DISABLED)
                 elif self.slideshow ==2:
-                    self.CurrentImage= PhotoImage(file="CALCTUT.png")
+                    self.CurrentImage= PhotoImage(file="CALCTUT.gif")
                     self.nextbutton.configure(state = NORMAL)
                     self.backbutton.configure(state = NORMAL)
                 elif self.slideshow ==3:
-                    self.CurrentImage= PhotoImage(file="ORBTUT.png")
+                    self.CurrentImage= PhotoImage(file="ORBTUT.gif")
                     self.nextbutton.configure(state = NORMAL)
                     self.backbutton.configure(state = NORMAL)
                 elif self.slideshow ==4:
-                    self.CurrentImage= PhotoImage(file="FAQTUT.png")
+                    self.CurrentImage= PhotoImage(file="FAQTUT.gif")
                     self.nextbutton.configure(state = NORMAL)
                     self.backbutton.configure(state = NORMAL)
                 elif self.slideshow ==5:
-                    self.CurrentImage= PhotoImage(file="GLOSSTUT.png")
+                    self.CurrentImage= PhotoImage(file="GLOSSTUT.gif")
                     self.nextbutton.configure(state = DISABLED)
                     self.backbutton.configure(state = NORMAL)
             elif self.currenttutmenu == 3:
                 if self.slideshow == 1:
-                    self.CurrentImage= PhotoImage(file="FULLMISISONTUT.png")
+                    self.CurrentImage= PhotoImage(file="FULLMISISONTUT.gif")
                     self.backbutton.configure(state = DISABLED)
                     self.nextbutton.configure(state = DISABLED)
             removelabel(self.PhotoLabel)
@@ -1178,25 +1178,25 @@ class OrbitalCalculator():
                             3.109 * 10 ** 21,4.233 * 10 ** 22,3.726 * 10 ** 19,1.081 * 10 ** 19,1.115 * 10 ** 21],
                            [695000000,2440000,6050000,6370000,1740000, 3390000,69900000,58200000,25400000,24600000,262000000,250000, 700000, 13000,600000,200000,60000,320000,130000,138000,6000000,500000,300000,600000,65000,44000,210000],
                            ]
-        self.CALCmenu = PhotoImage(file="OPENCALCPs.png")
-        self.CREDmenu = PhotoImage(file="OPENCREDPs.png")
-        self.TUTmenu = PhotoImage(file="OPENTUTPs.png")
-        self.OPmenu = PhotoImage(file="OPENOPTPs.png")
-        self.Emenu= PhotoImage(file="MENUEARTH.png")
-        self.banImage = PhotoImage(file="Banner.png")
-        self.altImage = PhotoImage(file="AltBanner.png")
-        self.FcImage = PhotoImage(file="AltBannerBot.png")
-        self.shipImage = PhotoImage(file="apollopixelartsmall.png")
-        self.incImage = PhotoImage(file="InclineLayerLight.png")             
-        self.CurrentImage= PhotoImage(file="MENUEARTH.png")
-        self.HintImage= PhotoImage(file="TUThints.png")
+        self.CALCmenu = PhotoImage(file="OPENCALCPs.gif")
+        self.CREDmenu = PhotoImage(file="OPENCREDPs.gif")
+        self.TUTmenu = PhotoImage(file="OPENTUTPs.gif")
+        self.OPmenu = PhotoImage(file="OPENOPTPs.gif")
+        self.Emenu= PhotoImage(file="MENUEARTH.gif")
+        self.banImage = PhotoImage(file="Banner.gif")
+        self.altImage = PhotoImage(file="AltBanner.gif")
+        self.FcImage = PhotoImage(file="AltBannerBot.gif")
+        self.shipImage = PhotoImage(file="apollopixelartsmall.gif")
+        self.incImage = PhotoImage(file="InclineLayerLight.gif")             
+        self.CurrentImage= PhotoImage(file="MENUEARTH.gif")
+        self.HintImage= PhotoImage(file="TUThints.gif")
         self.startframe = Frame(self.groot, bg='gray70')
         self.advancedframe = Frame(self.groot, bg='gray70')
-        self.Vviva= PhotoImage(file="VISVIVA.png")
-        self.FGrav = PhotoImage(file="FGRAV.png")
-        self.Gconstant = PhotoImage(file="GCONSTANT.png")
-        self.Trocket = PhotoImage(file="ROCKEQ.png")
-        self.Evelocity = PhotoImage(file="EFFEXHVEL.png")
+        self.Vviva= PhotoImage(file="VISVIVA.gif")
+        self.FGrav = PhotoImage(file="FGRAV.gif")
+        self.Gconstant = PhotoImage(file="GCONSTANT.gif")
+        self.Trocket = PhotoImage(file="ROCKEQ.gif")
+        self.Evelocity = PhotoImage(file="EFFEXHVEL.gif")
         self.enterbutton = Button(self.advancedframe,text = "Set Velocity (m/s)", command=lambda:simpleloopchange(self.Ventry,'fake',self.V,'Vchange',False))   
         self.entercorebutton = Button(self.advancedframe,text = "Set Body Radius (m)", command=lambda:simpleloopchange(self.PRdentry,self.PReentry,self.planetradius,'Pchange',False))  
         self.entermassbutton = Button(self.advancedframe,text = "Set Body Mass (kg)", command=lambda:simpleloopchange(self.Mdentry,self.Meentry,self.M,'Mchange',False))
