@@ -101,7 +101,6 @@ class OrbitalCalculator():
                 if self.canvasx <= 960 or self.canvasy <= 560:
                     self.canvasx = 960
                     self.canvasy = 540
-                self.groot.attributes("-topmost", True)
                 self.groot.resizable(0,0)
                 self.root.wm_title("Orbital Calculator v 1.09")
                 self.groot.wm_title("Mission Control")
