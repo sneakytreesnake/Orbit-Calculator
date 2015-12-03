@@ -232,7 +232,7 @@ class OrbitalCalculator():
                 pass
         def looprun():
             updatedvchange()
-            self.resetbutton.configure(bg = 'crimson',foreground = 'snow',borderwidth=2,state = NORMAL)
+            self.resetbutton.configure(bg = 'red4',foreground = 'snow',borderwidth=2,state = NORMAL)
             self.loopcurrent = 0
             configurebuttons('disabled')
             self.resetbutton.configure (state = NORMAL)
@@ -552,7 +552,7 @@ class OrbitalCalculator():
                 if self.B >= self.planetradius:
                     configurebuttons('disabled')
                     self.w.delete(self.shipdraw) #Maybe make others like this, rpboably doesn't mateer
-                    self.animationstop.configure(bg = 'crimson',foreground = 'snow',borderwidth=2,state = NORMAL)
+                    self.animationstop.configure(bg = 'red4',foreground = 'snow',borderwidth=2,state = NORMAL)
                     if self.phase == 1 and self.spacecraftx >= self.canvasx - self.ovalheadway - self.shipdrawchange:
                         self.phase = 2
                     elif self.phase == 2 and self.spacecraftx <= self.ovalheadway + self.shipdrawchange:
