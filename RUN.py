@@ -20,20 +20,20 @@ class OrbitalCalculator():
                         self.shiprunbutton = Button(self.advancedframe,text = "Run Ship Animation", command=spacecraft_draw)
                         self.entershipmass = Button(self.advancedframe, text = "Optional - Confirm Mass (t)", command = shipmassset)
                         self.bodybutton = Button(self.advancedframe,text = "Confirm Body", command=planetbox)
-                        self.animationstop = Button(self.advancedframe, text = "Stop Animation", command = stopanimation,bg = 'silver', foreground = 'silver',borderwidth=0, state = DISABLED,disabledforeground='silver')
+                        self.animationstop = Button(self.advancedframe, text = "Stop Animation", command = stopanimation,bg = 'gray70', foreground = 'gray70',borderwidth=0, state = DISABLED,disabledforeground='gray70')
                         self.entershipmass.grid(column=2, row=20, columnspan = 2, sticky = W)
                         self.shiprunbutton.grid(row=19, column=1, columnspan = 2)
                         self.bodybutton.grid(row=15, column=3, columnspan = 1, sticky=W)
                         self.animationstop.grid(row = 19, column = 3)
-                        self.LINELAB1 = Label(self.advancedframe, text="- - - - - - - - - - - - - - - - - Run Ship Animation - - - - - - - - - - - - - - - - -", font="arial",bg='silver')
+                        self.LINELAB1 = Label(self.advancedframe, text="- - - - - - - - - - - - - - - - - Run Ship Animation - - - - - - - - - - - - - - - - -", font="arial",bg='gray70')
                         self.LINELAB1.grid(row=17, column=1, columnspan = 5)
-                        self.LINELAB2 =  Label(self.advancedframe, text="- - - - - - - - - - - - - - - - - - - Body Selection - - - - - - - - - - - - - - - - - - -", font="arial",bg='silver')
+                        self.LINELAB2 =  Label(self.advancedframe, text="- - - - - - - - - - - - - - - - - - - Body Selection - - - - - - - - - - - - - - - - - - -", font="arial",bg='gray70')
                         self.LINELAB2.grid(row=14, column=1, columnspan = 5)
-                        self.LINELAB3 = Label(self.advancedframe, text="- - - - - - - - - - - - - - - - - - - Run Simulation - - - - - - - - - - - - - - - - - - -", font="arial",bg='silver')
+                        self.LINELAB3 = Label(self.advancedframe, text="- - - - - - - - - - - - - - - - - - - Run Simulation - - - - - - - - - - - - - - - - - - -", font="arial",bg='gray70')
                         self.LINELAB3.grid(row=10, column=1, columnspan = 5)
                         self.speedSlide = Scale(self.advancedframe, from_=1, to=(50),length=165, orient = HORIZONTAL)
                         self.speedSlide.grid(row = 20, column =4 , columnspan = 2, sticky = W)
-                        self.speedLab = Label(self.advancedframe, text = "Animation Speed", bg = 'silver')
+                        self.speedLab = Label(self.advancedframe, text = "Animation Speed", bg = 'gray70')
                         self.speedLab.grid(row = 19 , column=4, columnspan = 2)
                         self.shipmassBox = Entry(self.advancedframe, textvariable=self.shipmassentry,width= 12)
                         self.shipmassBox.grid(row=20, column=1,sticky = E)
@@ -105,8 +105,8 @@ class OrbitalCalculator():
                 self.groot.resizable(0,0)
                 self.root.wm_title("Orbital Calculator v 1.09")
                 self.groot.wm_title("Mission Control")
-                self.root.configure(bg='silver') # windoow bg
-                self.groot.configure(bg='silver')
+                self.root.configure(bg='gray70') # windoow bg
+                self.groot.configure(bg='gray70')
                 self.root.resizable(0,0)
                 self.root.protocol('WM_DELETE_WINDOW',grootwindowclose)
                 self.ovalheadway = 0
@@ -236,10 +236,10 @@ class OrbitalCalculator():
             self.loopcurrent = 0
             configurebuttons('disabled')
             self.resetbutton.configure (state = NORMAL)
-            self.waitnes = Label(self.advancedframe, text =("Calculating..."), bg = 'silver')
+            self.waitnes = Label(self.advancedframe, text =("Calculating..."), bg = 'gray70')
             self.waitnes.grid(row = 12, column = 1, columnspan = 2)
             if self.windowdict['proot'] == True:
-                self.waitmes = Label(self.proot, text =("Calculating..."), bg = 'silver')
+                self.waitmes = Label(self.proot, text =("Calculating..."), bg = 'gray70')
                 self.waitmes.grid(row = 6, column = 1, columnspan = 3)
             update_frame()
         def planetbox():
@@ -283,14 +283,14 @@ class OrbitalCalculator():
                 self.mroot.protocol('WM_DELETE_WINDOW',lambda:windowdictclose(self.mroot,'mroot'))
                 self.mroot.wm_title("Math")
                 self.mroot.resizable(0,0)
-                self.mroot.configure(bg='silver')
+                self.mroot.configure(bg='gray70')
                 self.mathslideshow = 1
                 mathslide()
                 self.nextbutton = Button(self.mroot, text='Next',command = mathplusone)
                 self.nextbutton.grid(row=5,column=1, sticky = E)
                 self.backbutton = Button(self.mroot, text='Back',command = mathminusone)
                 self.backbutton.grid(row=5,column=1, sticky = W)
-                Label(self.mroot, text = "* Click on formulae to link to web source.", bg = 'silver', font = (tkinter.font.Font(family='Arial',size=10))).grid(row = 6, column = 2, sticky = E)
+                Label(self.mroot, text = "* Click on formulae to link to web source.", bg = 'gray70', font = (tkinter.font.Font(family='Arial',size=10))).grid(row = 6, column = 2, sticky = E)
                 self.mathcombust = Button(self.mroot, text = "Close", command = lambda:windowdictclose(self.mroot,'mroot'))
                 self.mathcombust.grid(row = 6, column = 1, sticky = W)
         def mathresetslide():
@@ -312,28 +312,28 @@ class OrbitalCalculator():
                 self.Vbutton.grid(row = 3, column = 2)
                 self.Vlab = Label(self.mroot, text = "Vis - Viva Equation")
                 self.Vlab.grid(row=3,column=1)
-                self.Vbutton.configure(bg = 'gray90', foreground = 'silver',borderwidth=5,disabledforeground='silver')
+                self.Vbutton.configure(bg = 'gray90', foreground = 'gray70',borderwidth=5,disabledforeground='gray70')
                 self.FGbutton = Button(self.mroot, image=self.FGrav,command=lambda:webbrowser.open('https://en.wikipedia.org/wiki/Gravitational_acceleration#For_point_masses'))
                 self.FGbutton.grid(row = 2, column = 2)
                 self.FGlab = Label(self.mroot, text = "Force of Gravity")
                 self.FGlab.grid(row=2,column=1)
-                self.FGbutton.configure(bg = 'gray90', foreground = 'silver',borderwidth=5,disabledforeground='silver')
+                self.FGbutton.configure(bg = 'gray90', foreground = 'gray70',borderwidth=5,disabledforeground='gray70')
                 self.Gbutton = Button(self.mroot, image=self.Gconstant,command=lambda:webbrowser.open('https://en.wikipedia.org/wiki/Gravitational_constant#Laws_and_constants'))
                 self.Gbutton.grid(row = 1, column = 2)
                 self.Glab = Label(self.mroot, text = "Gravational Constant")
                 self.Glab.grid(row=1,column=1)
-                self.Gbutton.configure(bg = 'gray90', foreground = 'silver',borderwidth=5,disabledforeground='silver')
+                self.Gbutton.configure(bg = 'gray90', foreground = 'gray70',borderwidth=5,disabledforeground='gray70')
             elif self.mathslideshow ==2:
                 self.Tbutton = Button(self.mroot, image=self.Trocket,command=lambda:webbrowser.open('https://en.wikipedia.org/wiki/Tsiolkovsky_rocket_equation'))
                 self.Tbutton.grid(row = 1, column = 2)
                 self.Tlab = Label(self.mroot, text = "Tsiolkovsky Rocket Equation")
                 self.Tlab.grid(row=1,column=1)
-                self.Tbutton.configure(bg = 'gray90', foreground = 'silver',borderwidth=5,disabledforeground='silver')
+                self.Tbutton.configure(bg = 'gray90', foreground = 'gray70',borderwidth=5,disabledforeground='gray70')
                 self.Ebutton = Button(self.mroot, image=self.Evelocity,command=lambda:webbrowser.open('https://en.wikipedia.org/wiki/Specific_impulse#Specific_impulse_as_a_speed_.28effective_exhaust_velocity.29'))
                 self.Ebutton.grid(row = 2, column = 2)
                 self.Elab = Label(self.mroot, text = "Effective Exhaust Velocity")
                 self.Elab.grid(row=2,column=1)
-                self.Ebutton.configure(bg = 'gray90', foreground = 'silver',borderwidth=5,disabledforeground='silver')
+                self.Ebutton.configure(bg = 'gray90', foreground = 'gray70',borderwidth=5,disabledforeground='gray70')
         def mathplusone():
             mathresetslide()
             if self.mathslideshow == 1:
@@ -350,12 +350,12 @@ class OrbitalCalculator():
                 self.oroot.protocol('WM_DELETE_WINDOW',lambda:windowdictclose(self.oroot,'oroot'))
                 self.windowdict['oroot'] = True
                 self.oroot.wm_title("Glossary")
-                self.oroot.configure(bg='silver')
+                self.oroot.configure(bg='gray70')
                 self.oroot.resizable(0,0)
-                #Label(self.oroot,text = " ",bg='silver').grid(row = 1 , column = 3)
+                #Label(self.oroot,text = " ",bg='gray70').grid(row = 1 , column = 3)
                 #for level in range (32):
                 #    Label(self.oroot,text = "|").grid(row = level , column = 2)
-                Label(self.oroot,bg = 'silver',justify = LEFT, text = "\nAltitude\t\t\t|\tDistance from the current position to bodies centre of mass.\nApoapsis\t\t|\tPoint of orbit that is furthest from the body. Lowest possible orbital speed is here.\nBody\t\t\t|\tThe planet/sun/moon a satellite is orbiting.\nBurnout\t\t\t|\tShutdown of engine due to lack of fuel.\nBurn Time\t\t|\tHow long an engine can run for before burnout.\nCentre of Mass\t\t|\tPoint where all mass is concentrated. Assumed Centre of Mass in centre of body for calculations.\nCentripetal Force\t\t|\tHow much force is acting on an object to keep it in the circle/ellipse that it is travelling in. Expressed as Fc.\nDelta V\t\t\t|\tChange in velocity.\nDry Mass\t\t|\tMass of a spacecraft when fuel is empty.\nEccentricity\t\t|\tA measure of how much a conic section deviates from being circular.\nEquatorial Plane\t\t|\tPlane parrellel with equatorial line.\nEscape Velocity\t\t|\tVelocity needed to escape orbit of the body being orbited.\nFocal Length\t\t|\tDistance from the centre of orbit to where the orbiting body is.\nFuel Mass\t\t|\tHow much mass of a spacecraft is fuel.\nGravational Acceleration\t|\tMeasurement of how much acceleration an object will inherit when no other forces are active.\nGravational Constant\t|\tUse to calculate the attractive forces of two bodies as proportionate to their own mass. Approximately 6.674x 10 ^ -11 Nm^2/kg^2.\nGravational Parameter\t|\tExpressed as μ and and shown in unit m^3/s. Product of Gravational Constant and mass of body.\nInclination\t\t|\tAngle of orbit measured from equatorial plane.\nManoeuvre\t\t|\tA movement.\nMass\t\t\t|\tHow much matter is in an object. The more matter the 'heavier' when combined with gravational acceleration.\nOrbit\t\t\t|\tPath of satellite around a body.\nPeriapsis\t\t\t|\tPoint of orbit that is closest to body. Highest possible orbital speed is here.\nPeriod\t\t\t|\tTime required for one circuit of orbit.\nPrograde\t\t|\tThe direction in the orbit is travelling.\nRadar Altitude\t\t|\tHow high something is from the surface beneath it. Eg. Altitude of spacecraft from sea level of body.\nRetrograde\t\t|\tThe direction opposite from the direction the orbit is travelling.\nSemi-Major Axis\t\t|\tHalf of the longest part of an orbit.\nSemi-Minor Axis\t\t|\tHalf of the shortest part of an orbit.\nSpecific Impulse\t\t|\tExpressed as Isp, and measured in seconds. It is a measurement of how effeciency of converting fuel into thrust.\nThrust\t\t\t|\tHow much force an engine can exhert.\nVelocity\t\t\t|\tHow fast an object is travelling in a particular direction.\nWet Mass\t\t|\tMass of a spacecraft when full of fuel.\n").grid(row = 1)
+                Label(self.oroot,bg = 'gray70',justify = LEFT, text = "\nAltitude\t\t\t|\tDistance from the current position to bodies centre of mass.\nApoapsis\t\t|\tPoint of orbit that is furthest from the body. Lowest possible orbital speed is here.\nBody\t\t\t|\tThe planet/sun/moon a satellite is orbiting.\nBurnout\t\t\t|\tShutdown of engine due to lack of fuel.\nBurn Time\t\t|\tHow long an engine can run for before burnout.\nCentre of Mass\t\t|\tPoint where all mass is concentrated. Assumed Centre of Mass in centre of body for calculations.\nCentripetal Force\t\t|\tHow much force is acting on an object to keep it in the circle/ellipse that it is travelling in. Expressed as Fc.\nDelta V\t\t\t|\tChange in velocity.\nDry Mass\t\t|\tMass of a spacecraft when fuel is empty.\nEccentricity\t\t|\tA measure of how much a conic section deviates from being circular.\nEquatorial Plane\t\t|\tPlane parrellel with equatorial line.\nEscape Velocity\t\t|\tVelocity needed to escape orbit of the body being orbited.\nFocal Length\t\t|\tDistance from the centre of orbit to where the orbiting body is.\nFuel Mass\t\t|\tHow much mass of a spacecraft is fuel.\nGravational Acceleration\t|\tMeasurement of how much acceleration an object will inherit when no other forces are active.\nGravational Constant\t|\tUse to calculate the attractive forces of two bodies as proportionate to their own mass. Approximately 6.674x 10 ^ -11 Nm^2/kg^2.\nGravational Parameter\t|\tExpressed as μ and and shown in unit m^3/s. Product of Gravational Constant and mass of body.\nInclination\t\t|\tAngle of orbit measured from equatorial plane.\nManoeuvre\t\t|\tA movement.\nMass\t\t\t|\tHow much matter is in an object. The more matter the 'heavier' when combined with gravational acceleration.\nOrbit\t\t\t|\tPath of satellite around a body.\nPeriapsis\t\t\t|\tPoint of orbit that is closest to body. Highest possible orbital speed is here.\nPeriod\t\t\t|\tTime required for one circuit of orbit.\nPrograde\t\t|\tThe direction in the orbit is travelling.\nRadar Altitude\t\t|\tHow high something is from the surface beneath it. Eg. Altitude of spacecraft from sea level of body.\nRetrograde\t\t|\tThe direction opposite from the direction the orbit is travelling.\nSemi-Major Axis\t\t|\tHalf of the longest part of an orbit.\nSemi-Minor Axis\t\t|\tHalf of the shortest part of an orbit.\nSpecific Impulse\t\t|\tExpressed as Isp, and measured in seconds. It is a measurement of how effeciency of converting fuel into thrust.\nThrust\t\t\t|\tHow much force an engine can exhert.\nVelocity\t\t\t|\tHow fast an object is travelling in a particular direction.\nWet Mass\t\t|\tMass of a spacecraft when full of fuel.\n").grid(row = 1)
                 self.glosscombust = Button(self.oroot, text = "Close", command = lambda:windowdictclose(self.oroot,'oroot'))
                 self.glosscombust.grid(row = 2,sticky= W)
         def faqdictopen(var,name,layer):
@@ -372,7 +372,7 @@ class OrbitalCalculator():
                 self.windowdict['froot'] = True
                 self.froot.protocol('WM_DELETE_WINDOW',lambda:windowdictclose(self.froot,'froot'))
                 self.froot.wm_title("Frequently Asked Questions")
-                self.froot.configure(bg='silver')
+                self.froot.configure(bg='gray70')
                 self.froot.resizable(0,0)
                 self.radiusexpframe = Frame(self.froot) #remove frames
                 Label(self.radiusexpframe,justify = LEFT, text = "When there is a larger planet radius, there is a larger distance between the spacecraft and\nthe CoM of the planet. This results in a lower gravitational acceleration. As shown by the\nequation g = GM/r^2, when the value of r (distance to CoM) increases, the values of g will\nshrink. Since there is less gravitational acceleration, there is less centripetal force\npulling the spacecraft toward the planet. Thus, a lower velocity is needed to obtain orbit.\nIf the velocity stays the same but the radius of the planet increases, the orbit will appear\nto ‘grow’.").grid(row = 1 , column = 1,sticky = W)
@@ -426,8 +426,8 @@ class OrbitalCalculator():
                 self.proot.protocol('WM_DELETE_WINDOW',lambda:windowdictclose(self.proot,'proot'))
                 self.proot.wm_title("Orbital Characteristics")
                 self.proot.resizable(0,0)
-                self.proot.configure(bg='silver')
-                self.prootframe = Frame(self.proot, bg='silver')
+                self.proot.configure(bg='gray70')
+                self.prootframe = Frame(self.proot, bg='gray70')
                 self.prootframe.grid(row=2,column=1)
                 self.sua =Label(self.prootframe) #Maybe put this in start
                 self.sa =Label(self.prootframe)
@@ -487,7 +487,7 @@ class OrbitalCalculator():
                 self.croot.protocol('WM_DELETE_WINDOW',lambda:windowdictclose(self.croot,'croot'))
                 self.croot.wm_title("Calculator")
                 self.croot.resizable(0,0)
-                self.croot.configure(bg='silver')
+                self.croot.configure(bg='gray70')
                 self.dvbutton = Button(self.croot, text = "Calculate Delta V", command = dvCalculator)
                 self.burnbutton = Button(self.croot, text = "Calculate Burn Time", command = burntimeCalculator)
                 self.ispBox = Entry(self.croot, textvariable=self.ispentry)
@@ -498,16 +498,16 @@ class OrbitalCalculator():
                 self.dryBox.grid(row=3, column=1)
                 self.dvbutton.grid(row = 2, column = 3)
                 self.burnbutton.grid(row = 7, column = 3)
-                Label(self.croot, text="\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -", font="arial",bg='silver').grid(row=4, column=1, columnspan = 5)
+                Label(self.croot, text="\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -", font="arial",bg='gray70').grid(row=4, column=1, columnspan = 5)
                 self.shipispBox = Entry(self.croot, textvariable=self.shipispentry)
                 self.shipispBox.grid(row=6, column=1)
                 self.shipthrustBox = Entry(self.croot, textvariable=self.shipenginethrustentry)
                 self.shipthrustBox.grid(row=7, column=1)
                 self.shipfuelBox = Entry(self.croot, textvariable=self.shipfuelmassentry)
                 self.shipfuelBox.grid(row=8, column=1)
-                self.dvlab = Label(self.croot, text=("DeltaV=",0, "m/s"), bg='silver')
+                self.dvlab = Label(self.croot, text=("DeltaV=",0, "m/s"), bg='gray70')
                 self.dvlab.grid(row=3, column = 3, columnspan = 5, sticky=W)
-                self.btlab = Label(self.croot, text=("DeltaV=",0, "m/s"), bg='silver')
+                self.btlab = Label(self.croot, text=("DeltaV=",0, "m/s"), bg='gray70')
                 self.btlab.grid(row=8, column = 3, columnspan = 5, sticky=W)
                 self.combust = Button(self.croot, text = "Close", command = lambda:windowdictclose(self.croot,'croot'))
                 self.combust.grid(row = 9, column = 1)
@@ -671,7 +671,7 @@ class OrbitalCalculator():
             self.stopall = 0
             self.repeat = 1
             configurebuttons('normal')
-            self.animationstop.configure(bg = 'silver', foreground = 'silver',borderwidth=0, state = DISABLED,disabledforeground='silver')
+            self.animationstop.configure(bg = 'gray70', foreground = 'gray70',borderwidth=0, state = DISABLED,disabledforeground='gray70')
         def zoom():
             self.zoom = self.ZoomSlide.get() * (int(self.canvasx)/300) # + 100 # self.zoom
             if (self.zoom - self.oldzoom) != 0:
@@ -772,7 +772,7 @@ class OrbitalCalculator():
                 self.planetcolor = "Dimgray"
             elif (SIGround(self.M, 4)) == 3.219 * 10 ** 20 and (SIGround(self.planetradius, 3)) == 138000:
                 self.planetname = "Dres"
-                self.planetcolor = "Silver"
+                self.planetcolor = "gray70"
             elif (SIGround(self.M, 4)) == 4233000000000000000000000 and (SIGround(self.planetradius, 3)) == 6000000:
                 self.planetname = "Jool"
                 self.planetcolor = "OliveDrab"
@@ -853,8 +853,8 @@ class OrbitalCalculator():
             self.w.create_line(self.ovalheadway, self.canvasy  - self.canvasy/100, self.ovalheadway + (self.UA/self.S) + 2 * self.planetsize, self.canvasy  - self.canvasy/100, width = 10, fill = "gray") #Baseline for planet
             self.w.create_line(self.ovalheadway + self.UA/self.S + self.planetsize, self.canvasy  - self.canvasy/100 - 80, self.canvasx - self.ovalheadway, self.canvasy - self.canvasy/100 - 80, width = 10, fill = "darkgray") # BaselineOpposing Ship
             self.w.create_line(self.ovalheadway, self.canvasy - self.canvasy/100 - 40, self.ovalheadway + self.UA/self.S + self.planetsize, self.canvasy - self.canvasy/100 - 40, width = 10, fill = "darkgray") #Baseline With ship
-            self.w.create_line(self.ovalheadway, self.canvasy - self.canvasy/100, self.ovalheadway, self.canvasy  - self.canvasy/100- 60, width = 5, fill = "silver")# Ship/ Orbit Start
-            self.w.create_line(self.canvasx - self.ovalheadway, self.canvasy - self.canvasy/100, self.canvasx - self.ovalheadway, self.canvasy  - self.canvasy/100- 100, width = 5, fill = "silver")# Orbit End
+            self.w.create_line(self.ovalheadway, self.canvasy - self.canvasy/100, self.ovalheadway, self.canvasy  - self.canvasy/100- 60, width = 5, fill = "gray70")# Ship/ Orbit Start
+            self.w.create_line(self.canvasx - self.ovalheadway, self.canvasy - self.canvasy/100, self.canvasx - self.ovalheadway, self.canvasy  - self.canvasy/100- 100, width = 5, fill = "gray70")# Orbit End
             self.w.create_line(self.ovalheadway + self.UA/self.S + self.planetsize, self.canvasy  - self.canvasy/100, self.ovalheadway + self.UA/self.S + self.planetsize, self.canvasy  - self.canvasy/100- 100, width = 5, fill = "lightgray") #Panet cen
             self.w.create_line(self.ovalheadway + self.UA/self.S, self.canvasy - self.canvasy/100, self.ovalheadway + self.UA/self.S, self.canvasy - self.canvasy/100- 20, width = 5, fill = "black") #Planet line start
             self.w.create_line(self.ovalheadway + (self.UA/self.S) + 2 * self.planetsize, self.canvasy - self.canvasy/100,self.ovalheadway + (self.UA/self.S) + 2 * self.planetsize, self.canvasy- self.canvasy/100- 20, width = 5, fill = "black") #Planet line end
@@ -925,7 +925,7 @@ class OrbitalCalculator():
                 
                 if self.first != 1:
                     updatedvchange()
-                    self.resetbutton.configure(bg = 'silver', foreground = 'silver',borderwidth=0, state = DISABLED,disabledforeground='silver')
+                    self.resetbutton.configure(bg = 'gray70', foreground = 'gray70',borderwidth=0, state = DISABLED,disabledforeground='gray70')
                 else:
                     self.first += 1
                 removelabel(self.waitnes)
@@ -936,7 +936,7 @@ class OrbitalCalculator():
                 self.tutcombust = Button(self.tutroot, text = "Close", command = lambda:windowdictclose(self.tutroot,'tutroot'))
                 self.tutcombust.grid(row = 200, column = 1, columnspan = 1,sticky = W)
                 self.tutroot.protocol('WM_DELETE_WINDOW',lambda:windowdictclose(self.tutroot,'tutroot'))
-                self.tutroot.configure(bg = 'silver')
+                self.tutroot.configure(bg = 'gray70')
                 self.tutroot.wm_title("Tutorial")
                 self.tutroot.resizable(0,0)
                 self.slideshow = 0
@@ -954,11 +954,11 @@ class OrbitalCalculator():
                 removelabel(self.backbutton)
                 self.PhotoLabel = Label(self.tutroot, image=self.CurrentImage)
                 self.PhotoLabel.grid(row = 1, column = 3,rowspan = 1000)
-                self.PhotoLabel.configure(bg = 'silver')
+                self.PhotoLabel.configure(bg = 'gray70')
                 removelabel(self.PhotoLabel)
                 self.HintLabel = Label(self.tutroot, image=self.HintImage)
                 self.HintLabel.grid(row = 10, column = 3, rowspan =30)
-                self.HintLabel.configure(bg = 'silver')
+                self.HintLabel.configure(bg = 'gray70')
         def resetslide():
             if self.currenttutmenu == 1:
                 if self.slideshow == 1:
@@ -1002,7 +1002,7 @@ class OrbitalCalculator():
             removelabel(self.PhotoLabel)
             self.PhotoLabel = Label(self.tutroot, image=self.CurrentImage)
             self.PhotoLabel.grid(row = int((10 * self.currenttutmenu) + 8), column = 2)
-            self.PhotoLabel.configure(bg = 'silver')
+            self.PhotoLabel.configure(bg = 'gray70')
         def plusone():
             if self.currenttutmenu == 1:
                 if self.slideshow <= 2:
@@ -1053,40 +1053,40 @@ class OrbitalCalculator():
                 self.credroot = Toplevel()
                 self.windowdict['credroot'] = True
                 self.credroot.protocol('WM_DELETE_WINDOW',lambda:windowdictclose(self.credroot,'credroot'))
-                self.credroot.configure(bg = 'silver')
+                self.credroot.configure(bg = 'gray70')
                 self.credroot.wm_title("Credits")
                 self.windowdict['credroot'] == False
-                Label(self.credroot, text = "Martin Lambrechtse - Reid\n\nCreated on Python 3 as a demonstration on Celestial Mechanics\nto L3 NCEA students. This script is free to be edited as long\nas credit is given. This project has been created to comply\nwith NCEA unit standard AS91354 and AS91370. This program was created\ncreated by a L2 student that is fascinated by space and its theory.\n", bg = 'silver').grid(row = 3,column = 1)
-                Label(self.credroot, justify = LEFT, text = "Assumptions:\n•The spacecraft exherts no gravational pull on the body it orbits.\n•Langrange points are not modelled.\n•No external forces are acting.\n•Number rounding is used when displaying, usually 4 s.f. or 1-2 dp.\n•The default atmosphere height is 100km, based on the Karman line.\n•Atmospheres are not changed when changing body like mass or radius.\n•Orbit speed of spacecraft is scaled down when animating.\n•No SOI radius implented. It's possible to make an orbit 'too big'.\n•A very small computational inaccuracy is present.\n\nKnown bugs:\n•The spacecraft animation freezes the script at low resolutions & high zoom.\n••Fix - Close and reopen script. Use a lower zoom level next time.\n•Orbital Window goes white when changing altitude too much.\n••Cause - Orbit exceeds escape velocity and therefore cannot physically exist.\n••Fix - Click the red reset button.\n•Inclination animates -170° to 170° the long way rather than the short.\n••Fix - None, it's a visual bug. Delta V calculations work properly.\n•Neptune in planet selection gives a long decimal string rather than 4 s.f.\n••Cause - Sometimes 1=/= 1 due to the way floating point numbers work.\n••Fix - It is as inaccurate as anything else due to computing rounding errors.\n", bg = 'silver').grid(row =4,column = 1,sticky = W)
+                Label(self.credroot, text = "Martin Lambrechtse - Reid\n\nCreated on Python 3 as a demonstration on Celestial Mechanics\nto L3 NCEA students. This script is free to be edited as long\nas credit is given. This project has been created to comply\nwith NCEA unit standard AS91354 and AS91370. This program was created\ncreated by a L2 student that is fascinated by space and its theory.\n", bg = 'gray70').grid(row = 3,column = 1)
+                Label(self.credroot, justify = LEFT, text = "Assumptions:\n•The spacecraft exherts no gravational pull on the body it orbits.\n•Langrange points are not modelled.\n•No external forces are acting.\n•Number rounding is used when displaying, usually 4 s.f. or 1-2 dp.\n•The default atmosphere height is 100km, based on the Karman line.\n•Atmospheres are not changed when changing body like mass or radius.\n•Orbit speed of spacecraft is scaled down when animating.\n•No SOI radius implented. It's possible to make an orbit 'too big'.\n•A very small computational inaccuracy is present.\n\nKnown bugs:\n•The spacecraft animation freezes the script at low resolutions & high zoom.\n••Fix - Close and reopen script. Use a lower zoom level next time.\n•Orbital Window goes white when changing altitude too much.\n••Cause - Orbit exceeds escape velocity and therefore cannot physically exist.\n••Fix - Click the red reset button.\n•Inclination animates -170° to 170° the long way rather than the short.\n••Fix - None, it's a visual bug. Delta V calculations work properly.\n•Neptune in planet selection gives a long decimal string rather than 4 s.f.\n••Cause - Sometimes 1=/= 1 due to the way floating point numbers work.\n••Fix - It is as inaccurate as anything else due to computing rounding errors.\n", bg = 'gray70').grid(row =4,column = 1,sticky = W)
                 self.credcombust = Button(self.credroot, text = "Close", command = lambda:windowdictclose(self.credroot,'credroot'))
                 self.credcombust.grid(row = 500, column = 1)
         def optionmenu():
             if self.windowdict['oproot'] == False:
                 self.oproot = Toplevel()
                 self.oproot.protocol('WM_DELETE_WINDOW',lambda:windowdictclose(self.oproot,'oproot'))
-                self.oproot.configure(bg = 'silver')
+                self.oproot.configure(bg = 'gray70')
                 self.oproot.wm_title("Options")
                 self.windowdict['oproot'] = True
                 self.desxres = IntVar()
                 self.desyres = IntVar()
-                Label(self.oproot, text = "- - - - - -  - - Resolution- - - - - - - - - - - - - - - - - -",bg = 'silver').grid(row = 2, column = 1, columnspan = 4)
-                Label(self.oproot, text = "  Display Mode  ", bg = 'silver').grid(row=1,column = 2)
+                Label(self.oproot, text = "- - - - - -  - - Resolution- - - - - - - - - - - - - - - - - -",bg = 'gray70').grid(row = 2, column = 1, columnspan = 4)
+                Label(self.oproot, text = "  Display Mode  ", bg = 'gray70').grid(row=1,column = 2)
                 self.fulopen = Button(self.oproot, text="FullScreen", command=fullscreen)
                 self.fulopen.grid(row = 1, column = 1, columnspan = 2, sticky = W)
                 self.winopen = Button(self.oproot, text="Windowed", command=windowed)
                 self.winopen.grid(row = 1, column = 3, columnspan = 2, sticky = W)
-                self.reslab = Label(self.oproot,bg = 'silver')
+                self.reslab = Label(self.oproot,bg = 'gray70')
                 self.reslab.grid(row=39,column = 1, columnspan =4, sticky = W)
                 self.AmountSlide = Scale(self.oproot, from_=1, to=(500),length=150, orient = HORIZONTAL)
                 self.AmountSlide.grid(row = 101, column =1 , columnspan = 2, sticky = W)
                 self.confirmcalc = Button(self.oproot, text = "Confirm Animation Quality", command = animationoverride)
                 self.confirmcalc.grid(row = 101, column = 3, columnspan = 2, sticky = W)
-                Label(self.oproot, text = "\n- - - - - -  - - Program Mode - - - - - - - - - - - - - - - - - -", bg = 'silver').grid(row=148,column = 1, columnspan = 4)
+                Label(self.oproot, text = "\n- - - - - -  - - Program Mode - - - - - - - - - - - - - - - - - -", bg = 'gray70').grid(row=148,column = 1, columnspan = 4)
                 self.BasicMode = Button(self.oproot, text = "Basic", command = basics)
                 self.BasicMode.grid(row = 150, column = 2, sticky = W)
                 self.AdvancedMode = Button(self.oproot, text = "Advanced", command  = advanceds)
                 self.AdvancedMode.grid(row = 150, column = 3, sticky = W)
-                Label(self.oproot, text = '', bg = 'silver').grid(row = 199, column =1)
+                Label(self.oproot, text = '', bg = 'gray70').grid(row = 199, column =1)
                 self.optioncombust = Button(self.oproot, text = "Close", command = lambda:windowdictclose(self.oproot,'oproot'))
                 self.optioncombust.grid(row = 200, column = 1, columnspan = 2)
                 self.qHD = Button(self.oproot, text="960x540",command=lambda:presetres(960,540))
@@ -1105,7 +1105,7 @@ class OrbitalCalculator():
                 self.auto.grid(row=4,column = 4)
                 self.custom = Button(self.oproot, text="Custom", command = custombox)
                 self.custom.grid(row=5,column = 4)
-                Label(self.oproot, text = "\n- - - - - - - - - -  - - Misc - - - - - - - - - - - - - - - - - - - - - -", bg = 'silver').grid(row=170,column = 1, columnspan = 4)
+                Label(self.oproot, text = "\n- - - - - - - - - -  - - Misc - - - - - - - - - - - - - - - - - - - - - -", bg = 'gray70').grid(row=170,column = 1, columnspan = 4)
                 self.blurbshow = Button(self.oproot, text="Show Blurb on Startup", command = lambda:preferancechange('Blurbwindowopen = False','Blurbwindowopen = True'))#add function
                 self.blurbshow.grid(row = 171, column = 1, columnspan = 3)
                 self.oproot.resizable(0,0)
@@ -1170,7 +1170,7 @@ class OrbitalCalculator():
         self.groot = tkinter.Tk()
         self.groot.wm_title("Menu")
         self.groot.resizable(0,0) #make instead all of this variable nonsense that is dependant on files be in orbit window
-        self.groot.configure(bg = 'silver')
+        self.groot.configure(bg = 'gray70')
         self.planetlist = [['Sun','Mercury', 'Venus', 'Earth', '      Moon', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune', 'Kerbol', 'Moho', 'Eve', '      Gilly', 'Kerbin',
                             '        Mun' , '        Minmus','Duna', '       Ike', 'Dres', 'Jool', '      Laythe', '      Vall', '      Tylo', '      Bop', '      Pol', 'Eeloo'],
                            [1.988 * 10 ** 30,3.302 * 10 ** 23,4.867 * 10 ** 24,5.972 * 10 ** 24,7.348 * 10 ** 22, 6.418 * 10 ** 23,1.898 * 10 ** 27,5.683 * 10 ** 26 , 8.681 * 10 ** 25,102400000000000000000000000, 1.756 * 10 ** 28,
@@ -1190,8 +1190,8 @@ class OrbitalCalculator():
         self.incImage = PhotoImage(file="InclineLayerLight.png")             
         self.CurrentImage= PhotoImage(file="MENUEARTH.png")
         self.HintImage= PhotoImage(file="TUThints.png")
-        self.startframe = Frame(self.groot, bg='silver')
-        self.advancedframe = Frame(self.groot, bg='silver')
+        self.startframe = Frame(self.groot, bg='gray70')
+        self.advancedframe = Frame(self.groot, bg='gray70')
         self.Vviva= PhotoImage(file="VISVIVA.png")
         self.FGrav = PhotoImage(file="FGRAV.png")
         self.Gconstant = PhotoImage(file="GCONSTANT.png")
@@ -1205,7 +1205,7 @@ class OrbitalCalculator():
         self.enterathbutton = Button(self.advancedframe,text = "Set Atmosphere (m)", command=lambda:simpleloopchange(self.Atdentry,self.Ateentry,self.atmospheresize,'Atchange',False))
         self.enterincbutton = Button(self.advancedframe,text = "Set Inclination (°)", command=lambda:simpleloopchange(self.InclineSlide,'fake',self.incline,'Ichange',False))
         self.buttonrun = Button(self.advancedframe,text='Run!',command=looprun)
-        self.resetbutton = Button(self.advancedframe,text = "Reset", command=reset,bg = 'silver')          
+        self.resetbutton = Button(self.advancedframe,text = "Reset", command=reset,bg = 'gray70')          
         self.changeposition = Button(self.advancedframe, text = "Warp to Apo/Peri", command = loopchangeposition)
         self.crootwindowopen = Button(self.advancedframe, text = "Calculator", command = crootwindow)
         self.prootwindowopen = Button(self.advancedframe, text = "Orbital Characteristics", command = prootwindow)
@@ -1262,7 +1262,7 @@ class OrbitalCalculator():
         self.OLab.grid(row=2, column=2)
         self.AtLab = Label(self.advancedframe, text="x10^")
         self.AtLab.grid(row=7, column=2)
-        self.LINELAB4 = Label(self.advancedframe, text="- - - - - - - - - - - - - - - - - - - - - Navigation - - - - - - - - - - - - - - - - - - - - -", font="arial",bg='silver')
+        self.LINELAB4 = Label(self.advancedframe, text="- - - - - - - - - - - - - - - - - - - - - Navigation - - - - - - - - - - - - - - - - - - - - -", font="arial",bg='gray70')
         self.LINELAB4.grid(row=21, column=1, columnspan = 5)
         self.enterbutton.grid(row=1, column=4, sticky=W)
         self.entermassbutton.grid(row=5, column=4, sticky=W)
@@ -1284,31 +1284,31 @@ class OrbitalCalculator():
         self.InclineSlide.grid(row = 9, column =1 , columnspan = 4, sticky = W)
         self.ZoomSlide = Scale(self.advancedframe, from_=0, to=(100),length=130)
         self.ZoomSlide.grid(row = 1, column =5 , columnspan = 1, rowspan = 6, sticky = W)
-        self.zoomlab = Label(self.advancedframe, text = "ZOOM",bg='silver')
+        self.zoomlab = Label(self.advancedframe, text = "ZOOM",bg='gray70')
         self.zoomlab.grid(row = 7, column = 5)
         self.calccombust = Button(self.advancedframe, text = "Close", command = grootwindowclose)
         self.calccombust.grid(row = 29, column = 5, sticky = W)
-        self.waitnes = Label(self.advancedframe, text =("Calculating..."), bg = 'silver')
+        self.waitnes = Label(self.advancedframe, text =("Calculating..."), bg = 'gray70')
         self.waitnes.grid(row = 14, column = 1, columnspan = 3)
-        self.uplab = Label(self.advancedframe, text = "Spacecraft variables. ↑", bg = 'silver')
+        self.uplab = Label(self.advancedframe, text = "Spacecraft variables. ↑", bg = 'gray70')
         self.uplab.grid(row=4, column =1)
-        self.downlab = Label(self.advancedframe, text = "↓ Body variables.", bg = 'silver')
+        self.downlab = Label(self.advancedframe, text = "↓ Body variables.", bg = 'gray70')
         self.downlab.grid(row=4, column =3)
         self.startframe.grid(row=1,column =1)
-        self.orbitopen = Button(self.startframe, text="Open Calculator", command=orbitcalc, image = self.CALCmenu,bg = 'silver',borderwidth=0)
+        self.orbitopen = Button(self.startframe, text="Open Calculator", command=orbitcalc, image = self.CALCmenu,bg = 'gray70',borderwidth=0)
         self.orbitopen.grid(row = 1, column = 1,sticky=W)
-        self.tutopen = Button(self.startframe, text="Open Tutorial", command=tutwindowopen, image = self.TUTmenu,bg = 'silver',borderwidth=0)
+        self.tutopen = Button(self.startframe, text="Open Tutorial", command=tutwindowopen, image = self.TUTmenu,bg = 'gray70',borderwidth=0)
         self.tutopen.grid(row = 20, column = 1,sticky=W)
-        self.optopen = Button(self.startframe, text="Open Options", command=optionmenu, image = self.OPmenu,bg = 'silver',borderwidth=0)
+        self.optopen = Button(self.startframe, text="Open Options", command=optionmenu, image = self.OPmenu,bg = 'gray70',borderwidth=0)
         self.optopen.grid(row = 30, column = 1,sticky=W)
-        self.credopen = Button(self.startframe, text="Open Credits", command = credrootwindow,image = self.CREDmenu,bg = 'silver',borderwidth=0)
+        self.credopen = Button(self.startframe, text="Open Credits", command = credrootwindow,image = self.CREDmenu,bg = 'gray70',borderwidth=0)
         self.credopen.grid(row = 40,column = 1,sticky=W)
         self.EMbutton = Label(self.startframe, image=self.Emenu)
         self.EMbutton.grid(row = 1, column = 3,rowspan = 1000)
-        self.EMbutton.configure(bg = 'silver')
+        self.EMbutton.configure(bg = 'gray70')
         self.blurbwindow = Toplevel()
         self.blurbwindow.wm_title("Blurb")
-        self.blurbwindow.configure(bg = 'silver')
+        self.blurbwindow.configure(bg = 'gray70')
         self.blurbwindow.resizable(0,0)
         Label(self.blurbwindow,justify= LEFT, text = "This program simulates orbital motion under the\ninfluence of Newtonian gravity. It displays how\nfactors such as orbital velocity, orbit radius\nand gravational parameters of bodies affect an\norbit in a visual way. This program has been\ndesigned to be easily editible with many variables\nthat a user can edit and change, to control many\ncharacteristics of an orbit.\n\nThings to Note:\n•To run the simulation, enter a variable into a\nbox, and then select 'Set xxxxx'. Then click 'Run!'\nto run the simulation.\n•The simulation is set to basic mode by default.\nTo set unlock extra features, set the program to\nadvanced mode in the options.\n•There is a chance of crashing the program due\nto variables that exceed escape velocity. To fix this\njust press the red 'Reset' button.\n•You can only edit the spacecraft variable group or\nthe body variable group at a time. Please refer to the\ntutorial for more information.").grid(row = 1,sticky = W)
         self.blurbcombust = Button(self.blurbwindow, text = "Close", command = blurbclose)
