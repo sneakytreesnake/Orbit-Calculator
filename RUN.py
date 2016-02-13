@@ -101,6 +101,7 @@ class OrbitalCalculator():
                 if self.canvasx <= 960 or self.canvasy <= 560:
                     self.canvasx = 960
                     self.canvasy = 540
+                self.groot.attributes("-topmost", True)
                 self.groot.resizable(0,0)
                 self.root.wm_title("Orbital Calculator v 1.09")
                 self.groot.wm_title("Mission Control")
@@ -231,7 +232,7 @@ class OrbitalCalculator():
                 pass
         def looprun():
             updatedvchange()
-            self.resetbutton.configure(bg = 'red4',foreground = 'snow',borderwidth=2,state = NORMAL)
+            self.resetbutton.configure(bg = 'crimson',foreground = 'snow',borderwidth=2,state = NORMAL)
             self.loopcurrent = 0
             configurebuttons('disabled')
             self.resetbutton.configure (state = NORMAL)
@@ -448,7 +449,7 @@ class OrbitalCalculator():
                 self.sut =Label(self.prootframe, text="Gravational Parameter")
                 self.slt =Label(self.prootframe, text="Semi-Major Axis")
                 self.set =Label(self.prootframe, text="Focal Length")
-                self.sht =Label(self.prootframe, text="Semi-Penis Axis")
+                self.sht =Label(self.prootframe, text="Semi-Minor Axis")
                 self.spt =Label(self.prootframe, text="Orbital Period")
                 self.sdt =Label(self.prootframe, text="Eccentricity")
                 self.sevt =Label(self.prootframe, text="Escape Velocity")
@@ -551,7 +552,7 @@ class OrbitalCalculator():
                 if self.B >= self.planetradius:
                     configurebuttons('disabled')
                     self.w.delete(self.shipdraw) #Maybe make others like this, rpboably doesn't mateer
-                    self.animationstop.configure(bg = 'red4',foreground = 'snow',borderwidth=2,state = NORMAL)
+                    self.animationstop.configure(bg = 'crimson',foreground = 'snow',borderwidth=2,state = NORMAL)
                     if self.phase == 1 and self.spacecraftx >= self.canvasx - self.ovalheadway - self.shipdrawchange:
                         self.phase = 2
                     elif self.phase == 2 and self.spacecraftx <= self.ovalheadway + self.shipdrawchange:
@@ -870,7 +871,7 @@ class OrbitalCalculator():
             self.w.create_text(self.planetdetailsx, self.planetdetailsy, text=("Body_Radius=",((re.sub("(\d)(?=(\d{3})+(?!\d))", r"\1,", "%d" % (round(self.planetradius,1))))), "m"), font = self.ArialBg) #planetdetails
             self.w.create_text(self.planetdetailsx, self.planetdetailsy + 20, text=("Atmosphere_Altitude=",((re.sub("(\d)(?=(\d{3})+(?!\d))", r"\1,", "%d" % (round(self.atmospheresize,1))))), "m"), font = self.ArialBg) 
             self.w.create_line(self.ovalheadway + self.UA/self.S + self.planetsize  , self.canvasy/2  - 20, self.planetdetailsx, self.planetdetailsy + 30 , width = 1) #TO PLANETDETAILS
-            self.w.create_text(self.canvasx/2  , self.canvasy  - self.canvasy/100 - 10 , text=("Orbit_length=", ((re.sub("(\d)(?=(\d{3})+(?!\d))", r"\1,", "%d" % (round(2*self.L,1))))), "m"), font = self.ArialBg) #orbit text
+            self.w.create_text(self.canvasx/2  , self.canvasy  - self.canvasy/100 - 10 , text=("Major_Axis=", ((re.sub("(\d)(?=(\d{3})+(?!\d))", r"\1,", "%d" % (round(2*self.L,1))))), "m"), font = self.ArialBg) #orbit text
             self.w.create_text((self.ovalheadway + self.UA/self.S + self.planetsize)/2 + self.ovalheadway/2  , self.canvasy  - self.canvasy/100 - 50 , text = (self.periv , ((re.sub("(\d)(?=(\d{3})+(?!\d))", r"\1,", "%d" % (round(self.A,1))))),"m"), font = self.ArialBg) #A
             self.w.create_text((self.ovalheadway + self.UA/self.S + self.planetsize + self.canvasx - self.ovalheadway)/2  , self.canvasy  - self.canvasy/100 - 90 , text = (self.apov,((re.sub("(\d)(?=(\d{3})+(?!\d))", r"\1,", "%d" % (round(self.B,1))))),"m"), font = self.ArialBg) # B
             self.w.create_text(self.canvasx/2, self.canvasy - 150, text=self.notification, font = self.ArialBg) #Yes it doubles up ssh, make font settings go on both
